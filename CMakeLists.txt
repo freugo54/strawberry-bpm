@@ -21,9 +21,9 @@ qt_add_executable(strawberry-bpm
 target_link_libraries(strawberry-bpm PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets)
 
 # ---- CPack config for .deb generation ----
-include(CPack)
 set(CPACK_GENERATOR "DEB")
 set(CPACK_PACKAGE_NAME "strawberry-bpm")
 set(CPACK_PACKAGE_VERSION "1.2.11")
 set(CPACK_PACKAGE_CONTACT "freugo54@gmail.com")
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "freugo54")
+include(CPack)
