@@ -1,1 +1,6 @@
-BPM Patch for Strawberry developed via ChatGPT, 2025
+Strawberry BPM Testprojekt
+Version: 1.2.11-BPM
+Erweiterungen: Anzeige, Sortierung und Filterung nach BPM-Werten mit Nachkommastelle
+
+Erstellt durch freugo54 in Zusammenarbeit mit ChatGPT (OpenAI)
+Juni 2025
