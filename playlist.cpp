@@ -37,4 +37,5 @@ void Playlist::loadDemoTracks() {
     t3.setBpm(132.7f);
     demoTracks.push_back(t3);
 
-    m_model->setTr_
+    m_model->setTracks(demoTracks);
+}
