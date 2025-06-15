@@ -6,7 +6,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets)
 
-add_executable(strawberry-bpm
+qt_standard_project_setup()
+
+qt_add_executable(strawberry-bpm
+    main.cpp
     track.cpp
     track.h
     trackmodel.cpp
