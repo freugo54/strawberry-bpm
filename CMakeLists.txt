@@ -9,13 +9,13 @@ find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets)
 qt_standard_project_setup()
 
 qt_add_executable(strawberry-bpm
-    src/main.cpp
-    src/track.cpp
-    src/track.h
-    src/trackmodel.cpp
-    src/trackmodel.h
-    src/playlist.cpp
-    src/playlist.h
+    main.cpp
+    track.cpp
+    track.h
+    trackmodel.cpp
+    trackmodel.h
+    playlist.cpp
+    playlist.h
 )
 
 target_link_libraries(strawberry-bpm PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets)
@@ -26,4 +26,7 @@ set(CPACK_PACKAGE_NAME "strawberry-bpm")
 set(CPACK_PACKAGE_VERSION "1.2.11")
 set(CPACK_PACKAGE_CONTACT "freugo54@gmail.com")
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "freugo54")
+
+install(TARGETS strawberry-bpm DESTINATION bin)
+
 include(CPack)
