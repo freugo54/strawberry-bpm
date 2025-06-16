@@ -9,13 +9,13 @@ find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets)
 qt_standard_project_setup()
 
 qt_add_executable(strawberry-bpm
-    main.cpp
-    track.cpp
-    track.h
-    trackmodel.cpp
-    trackmodel.h
-    playlist.cpp
-    playlist.h
+    src/main.cpp
+    src/track.cpp
+    src/track.h
+    src/trackmodel.cpp
+    src/trackmodel.h
+    src/playlist.cpp
+    src/playlist.h
 )
 
 target_link_libraries(strawberry-bpm PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets)
