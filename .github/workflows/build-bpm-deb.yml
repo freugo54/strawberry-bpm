@@ -2,7 +2,7 @@ name: Build Strawberry BPM (.deb)
 
 on:
   push:
-    branches: [ releases ]
+    branches: [ main, releases ]
   workflow_dispatch:
 
 jobs:
