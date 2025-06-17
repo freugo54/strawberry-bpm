@@ -25,3 +25,4 @@ class Playlist : public QWidget {
 }  // namespace Widgets
 
 #endif  // WIDGETS_PLAYLIST_H
+
