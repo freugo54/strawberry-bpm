@@ -1,4 +1,4 @@
-#include "models/trackmodel.h"
+#include "trackmodel.h"
 #include "core/track.h"
 
 #include <QVariant>
