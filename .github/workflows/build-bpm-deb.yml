@@ -1,0 +1,41 @@
+name: Build Strawberry BPM (.deb)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y build-essential cmake qt6-base-dev qt6-tools-dev-tools \
+            libqt6svg6-dev libsqlite3-dev libtag1-dev libgstreamer1.0-dev \
+            libgstreamer-plugins-base1.0-dev libpulseaudio-dev \
+            libplist-dev libcdio-paranoia-dev
+
+      - name: Configure project
+        run: |
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        run: |
+          cmake --build build --parallel
+
+      - name: Package .deb
+        run: |
+          cd build
+          cpack -G DEB
+
+      - name: Upload .deb package
+        uses: actions/upload-artifact@v4
+        with:
+          name: strawberry-bpm
+          path: build/*.deb
