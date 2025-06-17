@@ -1,5 +1,5 @@
 #include "trackmodel.h"
-#include "core/track.h"
+#include "../core/track.h"
 
 #include <QVariant>
 #include <QString>
