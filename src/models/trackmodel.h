@@ -1,35 +1,20 @@
-#ifndef MODELS_TRACKMETADATAMODEL_H
-#define MODELS_TRACKMETADATAMODEL_H
+#ifndef MODELS_TRACKMODEL_H
+#define MODELS_TRACKMODEL_H
 
-#include "abstracttracktablemodel.h"
+#include <QAbstractTableModel>
 
 namespace Models {
 
-class TrackMetadataModel : public AbstractTrackTableModel {
+class TrackMetadataModel : public QAbstractTableModel {
   Q_OBJECT
 
- public:
-  explicit TrackMetadataModel(QObject *parent = nullptr);
-  ~TrackMetadataModel() override;
-
-  int columnCount(const QModelIndex &parent = QModelIndex()) const override;
+public:
+  explicit TrackMetadataModel(QObject *parent = nullptr) : QAbstractTableModel(parent) {}
+  int rowCount(const QModelIndex &parent = QModelIndex()) const override { Q_UNUSED(parent); return 1; }
+  int columnCount(const QModelIndex &parent = QModelIndex()) const override { Q_UNUSED(parent); return 2; }
   QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
-  QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
-
-  enum Column {
-    Title = 0,
-    Artist,
-    Album,
-    Length,
-    Bpm,           // NEU
-    ColumnCount
-  };
-
-  Qt::ItemFlags flags(const QModelIndex &index) const override;
-
-  int BpmColumnIndex() const { return Bpm; }
 };
 
 }  // namespace Models
 
-#endif  // MODELS_TRACKMETADATAMODEL_H
+#endif  // MODELS_TRACKMODEL_H
