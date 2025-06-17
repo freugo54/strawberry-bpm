@@ -1,5 +1,5 @@
 #include <QApplication>
-#include "playlist.h"
+#include "widgets/playlist.h"
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
