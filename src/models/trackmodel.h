@@ -1,7 +1,7 @@
 #ifndef MODELS_TRACKMETADATAMODEL_H
 #define MODELS_TRACKMETADATAMODEL_H
 
-#include "models/abstracttracktablemodel.h"
+#include "abstracttracktablemodel.h"
 
 namespace Models {
 
