@@ -1,4 +1,4 @@
-#include "track.h"
+#include "core/track.h"
 
 namespace Core {
 
@@ -13,7 +13,6 @@ void Track::SetTitle(const QString &title) {
   title_ = title;
 }
 
-// NEU: BPM
 float Track::Bpm() const {
   return bpm_;
 }
@@ -23,9 +22,7 @@ void Track::SetBpm(float bpm) {
 }
 
 bool Track::operator==(const Track &other) const {
-  return title_ == other.title_ &&
-         bpm_ == other.bpm_;
-  // ggf. weitere Felder ergänzen
+  return title_ == other.title_ && bpm_ == other.bpm_;
 }
 
 }  // namespace Core

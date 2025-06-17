@@ -1,30 +1,28 @@
+#ifndef CORE_TRACK_H
+#define CORE_TRACK_H
+
+#include <QString>
 
 namespace Core {
 
-Track::Track() = default;
-Track::~Track() = default;
+class Track {
+public:
+  Track();
+  ~Track();
 
-QString Track::Title() const {
-  return title_;
-}
+  QString Title() const;
+  void SetTitle(const QString &title);
 
-void Track::SetTitle(const QString &title) {
-  title_ = title;
-}
+  float Bpm() const;
+  void SetBpm(float bpm);
 
-// NEU: BPM
-float Track::Bpm() const {
-  return bpm_;
-}
+  bool operator==(const Track &other) const;
 
-void Track::SetBpm(float bpm) {
-  bpm_ = bpm;
-}
-
-bool Track::operator==(const Track &other) const {
-  return title_ == other.title_ &&
-         bpm_ == other.bpm_;
-  // ggf. weitere Felder ergänzen
-}
+private:
+  QString title_;
+  float bpm_ = 0.0f;
+};
 
 }  // namespace Core
+
+#endif  // CORE_TRACK_H
